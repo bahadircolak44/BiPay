@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  weather_db:
+  bipay_db:
     image: postgres
     environment:
-      POSTGRES_DB: weather_db
+      POSTGRES_DB: bipay_db
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     ports:
@@ -17,7 +17,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - weather_db
+      - bipay_db
     restart: on-failure
 
 #  nginx:
