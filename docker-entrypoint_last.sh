@@ -4,7 +4,6 @@ set -e
 python manage.py makemigrations
 python manage.py migrate --no-input
 echo "from django.contrib.auth.models import User;"\
-  "from api.models import WorldCities;"\
   "User.objects.create_superuser(username='test', email='bcolak@gmail.com', password='test')"\
   " if not User.objects.filter(username='test').exists() else '';"\
  | python manage.py shell
